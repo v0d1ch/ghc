@@ -1264,7 +1264,10 @@ isFunLhs e = go e [] []
         | Just (e',es') <- splitBang e
         = do { bang_on <- extension bangPatEnabled
              ; if bang_on then go e' (es' ++ es) ann
-               else return (Just (L loc' op, Infix, (l:r:es), ann)) }
+               else
+                 if op == (mkVarUnqual (mkFastString "!")) then return Nothing
+                -- bang!
+                 else return (Just (L loc' op, Infix, (l:r:es), ann)) }
                 -- No bangs; behave just like the next case
         | not (isRdrDataCon op)         -- We have found the function!
         = return (Just (L loc' op, Infix, (l:r:es), ann))
