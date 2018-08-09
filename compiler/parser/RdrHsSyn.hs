@@ -93,7 +93,7 @@ import TysWiredIn       ( cTupleTyConName, tupleTyCon, tupleDataCon,
                           nilDataConName, nilDataConKey,
                           listTyConName, listTyConKey, eqTyCon_RDR )
 import ForeignCall
-import PrelNames        ( forall_tv_RDR, allNameStrings )
+import PrelNames        ( bang_tv_RDR, forall_tv_RDR, allNameStrings )
 import SrcLoc
 import Unique           ( hasKey )
 import OrdList          ( OrdList, fromOL )
@@ -1265,10 +1265,10 @@ isFunLhs e = go e [] []
         = do { bang_on <- extension bangPatEnabled
              ; if bang_on then go e' (es' ++ es) ann
                else
-                 if op == (mkVarUnqual (mkFastString "!")) then return Nothing
-                -- bang!
+                 if op == bang_tv_RDR then return Nothing
+                         -- we found a bang! but bangpatterns is not turned on
                  else return (Just (L loc' op, Infix, (l:r:es), ann)) }
-                -- No bangs; behave just like the next case
+                         -- No bangs; behave just like the next case
         | not (isRdrDataCon op)         -- We have found the function!
         = return (Just (L loc' op, Infix, (l:r:es), ann))
         | otherwise                     -- Infix data con; keep going
