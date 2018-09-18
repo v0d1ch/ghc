@@ -70,6 +70,7 @@ module   RdrHsSyn (
 
         -- Warnings and errors
         warnStarIsType,
+        warnSpaceAfterBang,
         failOpFewArgs,
 
         SumOrTuple (..), mkSumOrTuple
@@ -1782,6 +1783,17 @@ hintBangPat span e = do
     unless bang_on $
       parseErrorSDoc span
         (text "Illegal bang-pattern (use BangPatterns):" $$ ppr e)
+
+-- | Warn about missing space behind !
+warnSpaceAfterBang :: SrcSpan -> P ()
+warnSpaceAfterBang span = do
+    bang_on <- extension bangPatEnabled
+    unless bang_on $
+      parseErrorSDoc span
+        (text "Did you mean to use BangPatterns ?" <+>
+         text "You could also add space after the" <+>
+         quotes (text "!") <+>
+         text "if you wanted to define infix operator: " <+> ppr span)
 
 data SumOrTuple
   = Sum ConTag Arity (LHsExpr GhcPs)

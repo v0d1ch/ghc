@@ -2471,7 +2471,7 @@ infixexp_top :: { LHsExpr GhcPs }
         : exp10_top               { $1 }
         | infixexp_top qop exp10_top
                                   {% do { when (srcSpanEnd (getLoc $2) == srcSpanStart (getLoc $3)) $
-                                            hintBangPat (comb2 $1 $2) (OpApp noExt $1 $2 $3);
+                                            warnSpaceAfterBang (comb2 $1 $2) ;
                                           ams (sLL $1 $> (OpApp noExt $1 $2 $3))
                                                [mj AnnVal $2] } }
 
