@@ -1,4 +1,4 @@
 
-T13600.hs:4:1: error:
+T13600b.hs:4:1: error:
     Illegal bang-pattern (use BangPatterns):
-    f4 ! x
+    f4 ! (Just _)
