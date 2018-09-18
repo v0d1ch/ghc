@@ -29,7 +29,7 @@ module Parser (parseModule, parseSignature, parseImport, parseStatement, parseBa
                parseType, parseHeader) where
 
 -- base
-import Control.Monad    ( unless, liftM )
+import Control.Monad    ( unless, liftM, when )
 import GHC.Exts
 import Data.Char
 import Control.Monad    ( mplus )
@@ -2470,8 +2470,10 @@ infixexp :: { LHsExpr GhcPs }
 infixexp_top :: { LHsExpr GhcPs }
         : exp10_top               { $1 }
         | infixexp_top qop exp10_top
-                                  {% ams (sLL $1 $> (OpApp noExt $1 $2 $3))
-                                         [mj AnnVal $2] }
+                                  {% do { -- when (advanceSrcLoc (srcSpanStart (getLoc $1)) '!' == srcSpanStart (getLoc $2)) $
+                                          hintBangPat (comb2 $1 $2) (OpApp noExt $1 $2 $3);
+                                          ams (sLL $1 $> (OpApp noExt $1 $2 $3))
+                                               [mj AnnVal $2] } }
 
 
 exp10_top :: { LHsExpr GhcPs }

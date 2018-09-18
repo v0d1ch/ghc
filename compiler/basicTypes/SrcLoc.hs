@@ -18,7 +18,7 @@ module SrcLoc (
         -- ** Constructing SrcLoc
         mkSrcLoc, mkRealSrcLoc, mkGeneralSrcLoc,
 
-        noSrcLoc,               -- "I'm sorry, I haven't a clue"
+        noSrcLoc,               -- "I'm sorry, I haven't got a clue"
         generatedSrcLoc,        -- Code generated within the compiler
         interactiveSrcLoc,      -- Code from an interactive session
 
