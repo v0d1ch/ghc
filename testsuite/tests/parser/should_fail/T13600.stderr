@@ -1,4 +1,4 @@
 
-T13600.hs:5:1: error:
-    Illegal bang-pattern (use BangPatterns):
-    f1 ! x
+T13600.hs:8:1: error:
+    Did you forget to activate -XBangPatterns ? If not, add a space before the bang !
+                                                                                    x

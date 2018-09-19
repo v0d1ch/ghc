@@ -1785,15 +1785,12 @@ hintBangPat span e = do
         (text "Illegal bang-pattern (use BangPatterns):" $$ ppr e)
 
 -- | Warn about missing space behind !
-warnSpaceAfterBang :: SrcSpan -> P ()
-warnSpaceAfterBang span = do
+warnSpaceAfterBang :: SrcSpan -> HsExpr GhcPs -> P ()
+warnSpaceAfterBang span e = do
     bang_on <- extension bangPatEnabled
     unless bang_on $
       parseErrorSDoc span
-        (text "Did you mean to use BangPatterns ?" <+>
-         text "You could also add space after the" <+>
-         quotes (text "!") <+>
-         text "if you wanted to define infix operator: " <+> ppr span)
+        (text "Did you forget to activate -XBangPatterns ? If not, add a space before the bang" <+> ppr e)
 
 data SumOrTuple
   = Sum ConTag Arity (LHsExpr GhcPs)
