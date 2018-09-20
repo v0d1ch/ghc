@@ -1,6 +1,0 @@
-
-T13600b.hs:3:3: error:
-    Did you forget to activate -XBangPatterns ?
-    If not, try adding a space before the bang
-    ! (Just x)
-

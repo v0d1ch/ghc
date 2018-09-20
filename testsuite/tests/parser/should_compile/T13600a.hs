@@ -1,4 +1,3 @@
--- | Should not warn
 module T13600a where
 
 f ! x = f !! x

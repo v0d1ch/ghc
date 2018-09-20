@@ -1230,6 +1230,12 @@ of ``-W(no-)*``.
     per-module basis with :ghc-flag:`-Wno-simplifiable-class-constraints
     <-Wsimplifiable-class-constraints>`.
 
+.. ghc-flag:: -Wspace-after-bang
+     :shortdesc: warn about spacing with strictness annotation when
+       ``-XBangPatterns`` are not enabled
+         :ghc-flag:`-XSpaceAfterBang`
+     :type: dynamic
+     :reverse: -Wno-space-after-bang
 .. ghc-flag:: -Wtabs
     :shortdesc: warn if there are tabs in the source file
     :type: dynamic

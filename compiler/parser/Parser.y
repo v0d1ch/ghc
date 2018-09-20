@@ -2470,10 +2470,10 @@ infixexp :: { LHsExpr GhcPs }
 infixexp_top :: { LHsExpr GhcPs }
         : exp10_top               { $1 }
         | infixexp_top qop exp10_top
-                                  {% do { let { e = sLL $2 $3 (SectionR noExt (sL1 $2 (HsVar noExt (sL1 $2 bang_RDR))) $3) };
-                                          when (srcSpanEnd (getLoc $2) == srcSpanStart (getLoc $3)
-                                                && checkIfBang $2) $
-                                               warnSpaceAfterBang (comb2 $2 $3) (unLoc e) ;
+                                  {% do { when (srcSpanEnd (getLoc $2)
+                                            == srcSpanStart (getLoc $3)
+                                            && checkIfBang $2) $
+                                            warnSpaceAfterBang (comb2 $2 $3);
                                           ams (sLL $1 $> (OpApp noExt $1 $2 $3))
                                                [mj AnnVal $2]
                                         }
