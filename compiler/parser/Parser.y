@@ -2472,9 +2472,8 @@ infixexp_top :: { LHsExpr GhcPs }
         | infixexp_top qop exp10_top
                                   {% do { let { e = sLL $2 $3 (SectionR noExt (sL1 $2 (HsVar noExt (sL1 $2 bang_RDR))) $3) };
                                           when (srcSpanEnd (getLoc $2) == srcSpanStart (getLoc $3)
-                                                -- todo v0d1ch: add a check if we are dealing with bang here
-                                                -- && eqLocated $2 (sL1 $2 (HsVar noExt (sL1 $2 bang_RDR)))
-                                               ) $ warnSpaceAfterBang (comb2 $1 $2) (unLoc e) ;
+                                                && checkIfBang $2) $
+                                               warnSpaceAfterBang (comb2 $2 $3) (unLoc e) ;
                                           ams (sLL $1 $> (OpApp noExt $1 $2 $3))
                                                [mj AnnVal $2]
                                         }

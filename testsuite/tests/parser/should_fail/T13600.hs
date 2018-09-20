@@ -14,4 +14,3 @@ f3 !(Just x) = return (sum x)
 
 f4 :: Maybe [Int] -> IO Int
 f4 ! (Just x) = return (sum x)
-

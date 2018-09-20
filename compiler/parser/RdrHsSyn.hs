@@ -46,6 +46,7 @@ module   RdrHsSyn (
         checkPrecP,           -- Int -> P Int
         checkContext,         -- HsType -> P HsContext
         checkInfixConstr,
+        checkIfBang,
         checkPattern,         -- HsExp -> P HsPat
         bang_RDR,
         checkPatterns,        -- SrcLoc -> [HsExp] -> P [HsPat]
@@ -1790,7 +1791,16 @@ warnSpaceAfterBang span e = do
     bang_on <- extension bangPatEnabled
     unless bang_on $
       parseErrorSDoc span
-        (text "Did you forget to activate -XBangPatterns ? If not, add a space before the bang" <+> ppr e)
+        (text "Did you forget to activate -XBangPatterns ?" $$
+         text "If not, try adding a space before the bang"  $$
+         ppr e)
+
+checkIfBang :: LHsExpr GhcPs -> Bool
+checkIfBang (L _ (HsVar _ (L _ op))) =
+  if op == bang_RDR
+    then True
+    else False
+checkIfBang _ = False
 
 data SumOrTuple
   = Sum ConTag Arity (LHsExpr GhcPs)

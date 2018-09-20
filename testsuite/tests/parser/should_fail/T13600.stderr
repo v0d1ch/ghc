@@ -1,4 +1,5 @@
 
-T13600.hs:8:1: error:
-    Did you forget to activate -XBangPatterns ? If not, add a space before the bang !
-                                                                                    x
+T13600.hs:7:4: error:
+    Did you forget to activate -XBangPatterns ?
+    If not, try adding a space before the bang
+    ! x
