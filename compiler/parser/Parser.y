@@ -3696,6 +3696,10 @@ hintExplicitForall' span = do
         , text "extension to enable explicit-forall syntax: forall <tvs>. <type>"
         ]
 
+checkIfBang :: LHsExpr GhcPs -> Bool
+checkIfBang (L _ (HsVar _ (L _ op))) = op == bang_RDR
+checkIfBang _ = False
+
 -- When two single quotes don't followed by tyvar or gtycon, we report the
 -- error as empty character literal, or TH quote that missing proper type
 -- variable or constructor. See Trac #13450.
