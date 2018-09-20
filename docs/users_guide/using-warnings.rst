@@ -35,6 +35,7 @@ generally likely to indicate bugs in your program. These are:
     * :ghc-flag:`-Wunrecognised-warning-flags`
     * :ghc-flag:`-Winaccessible-code`
     * :ghc-flag:`-Wstar-binder`
+    * :ghc-flag:`-Wspace-after-bang`
 
 The following flags are simple ways to select standard "packages" of warnings:
 
