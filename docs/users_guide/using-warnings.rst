@@ -1233,10 +1233,9 @@ of ``-W(no-)*``.
 
 .. ghc-flag:: -Wspace-after-bang
      :shortdesc: warn about spacing with strictness annotation when
-       ``-XBangPatterns`` are not enabled
-         :ghc-flag:`-XSpaceAfterBang`
+       :ghc-flag:`-XBangPatterns` are not enabled
      :type: dynamic
-     :reverse: -Wno-space-after-bang
+     :reverse: -Wno-missing-space-after-bang
 .. ghc-flag:: -Wtabs
     :shortdesc: warn if there are tabs in the source file
     :type: dynamic

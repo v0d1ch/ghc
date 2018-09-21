@@ -3868,7 +3868,7 @@ wWarningFlagsDeps = [
   flagSpec "unrecognised-warning-flags"  Opt_WarnUnrecognisedWarningFlags,
   flagSpec "star-binder"                 Opt_WarnStarBinder,
   flagSpec "star-is-type"                Opt_WarnStarIsType,
-  flagSpec "space-after-bang"            Opt_WarnSpaceAfterBang,
+  flagSpec "missing-space-after-bang"    Opt_WarnSpaceAfterBang,
   flagSpec "partial-fields"              Opt_WarnPartialFields ]
 
 -- | These @-\<blah\>@ flags can all be reversed with @-no-\<blah\>@
@@ -4599,7 +4599,8 @@ minusWallOpts
         Opt_WarnUnusedDoBind,
         Opt_WarnTrustworthySafe,
         Opt_WarnUntickedPromotedConstructors,
-        Opt_WarnMissingPatternSynonymSignatures
+        Opt_WarnMissingPatternSynonymSignatures,
+        Opt_WarnSpaceAfterBang
       ]
 
 -- | Things you get with -Weverything, i.e. *all* known warnings flags
