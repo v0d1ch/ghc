@@ -116,7 +116,7 @@ test('T14189',     normal, compile, ['-dsuppress-uniques -ddump-rn-ast'])
 test('T13986', normal, compile, [''])
 test('T10855', normal, compile, [''])
 test('T13600a', normal, compile, [''])
-test('T13600b', normal, compile, [''])
+test('T13600b', expect_broken(13600), compile, ['-Wall'])
 test('T15139', normal, compile, ['-Wincomplete-patterns -fdiagnostics-show-caret'])
 test('T15323', normal, compile, ['-dsuppress-uniques -ddump-parsed-ast'])
 
