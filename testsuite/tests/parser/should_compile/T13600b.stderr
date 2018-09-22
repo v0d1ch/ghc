@@ -1,83 +1,16 @@
-T13600b.hs:4:3: warning: [-Wmissing-signatures]
-    Top-level binding with no type signature:
-      (!) :: [a] -> Maybe Int -> a
-  |
-4 | f !(Just x) = f !! x
-  |   ^
 
-T13600b.hs:4:3: warning: [-Wmissing-space-after-bang]
-    Did you forget to enable BangPatterns?
-    If not, try adding a space before the bang
-  |
-4 | f !(Just x) = f !! x
-  |   ^^^^^^^^^
+ T13600b.hs:3:3: warning: [-Wmissing-space-after-bang (in -Wextra)]
+     Did you forget to enable BangPatterns?
+     If not, try adding a space before the bang
 
-T13600b.hs:4:10: warning: [-Wname-shadowing]
-    This binding for ‘x’ shadows the existing binding
-      defined at ../testsuite/tests/parser/should_compile/T13600b.hs:7:1
-  |
-4 | f !(Just x) = f !! x
-  |          ^
+ T13600b.hs:4:3: warning: [-Wmissing-space-after-bang (in -Wextra)]
+     Did you forget to enable BangPatterns?
+     If not, try adding a space before the bang
 
-T13600b.hs:5:3: warning: [-Wmissing-space-after-bang]
-    Did you forget to enable BangPatterns?
-    If not, try adding a space before the bang
-  |
-5 | f !y = head f
-  |   ^^
+ T13600b.hs:8:7: warning: [-Wmissing-space-after-bang (in -Wextra)]
+     Did you forget to enable BangPatterns?
+     If not, try adding a space before the bang
 
-T13600b.hs:5:4: warning: [-Wunused-matches]
-    Defined but not used: ‘y’
-  |
-5 | f !y = head f
-  |    ^
-
-T13600b.hs:7:1: warning: [-Wmissing-signatures]
-    Top-level binding with no type signature: x :: Integer
-  |
-7 | x = [1,2,3] ! Just 1
-  | ^
-
-T13600b.hs:7:6: warning: [-Wtype-defaults]
-    • Defaulting the following constraint to type ‘Integer’
-        Num a0 arising from the literal ‘1’
-    • In the expression: 1
-      In the first argument of ‘(!)’, namely ‘[1, 2, 3]’
-      In the expression: [1, 2, 3] ! Just 1
-  |
-7 | x = [1,2,3] ! Just 1
-  |      ^
-
-T13600b.hs:9:7: warning: [-Wname-shadowing]
-    This binding for ‘!’ shadows the existing binding
-      defined at ../testsuite/tests/parser/should_compile/T13600b.hs:4:3
-  |
-9 |     f !(Just x) = f !! x
-  |       ^
-
-T13600b.hs:9:7: warning: [-Wmissing-space-after-bang]
-    Did you forget to enable BangPatterns?
-    If not, try adding a space before the bang
-  |
-9 |     f !(Just x) = f !! x
-  |       ^^^^^^^^^
-
-T13600b.hs:9:14: warning: [-Wname-shadowing]
-    This binding for ‘x’ shadows the existing binding
-      defined at ../testsuite/tests/parser/should_compile/T13600b.hs:7:1
-  |
-9 |     f !(Just x) = f !! x
-  |              ^
-
-T13600b.hs:10:7: warning: [-Wmissing-space-after-bang]
-    Did you forget to enable BangPatterns?
-    If not, try adding a space before the bang
-   |
-10 |     f !y = head f
-   |       ^^
-
-T13600b.hs:10:8: warning: [-Wunused-matches]
-    Defined but not used: ‘y’
-   |
-10 |     f !y = head f
-   |        ^
+ T13600b.hs:9:7: warning: [-Wmissing-space-after-bang (in -Wextra)]
+     Did you forget to enable BangPatterns?
+     If not, try adding a space before the bang

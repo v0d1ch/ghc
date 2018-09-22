@@ -4584,7 +4584,8 @@ minusWOpts
         Opt_WarnIncompletePatterns,
         Opt_WarnDodgyExports,
         Opt_WarnDodgyImports,
-        Opt_WarnUnbangedStrictPatterns
+        Opt_WarnUnbangedStrictPatterns,
+        Opt_WarnSpaceAfterBang
       ]
 
 -- | Things you get with -Wall
@@ -4599,8 +4600,7 @@ minusWallOpts
         Opt_WarnUnusedDoBind,
         Opt_WarnTrustworthySafe,
         Opt_WarnUntickedPromotedConstructors,
-        Opt_WarnMissingPatternSynonymSignatures,
-        Opt_WarnSpaceAfterBang
+        Opt_WarnMissingPatternSynonymSignatures
       ]
 
 -- | Things you get with -Weverything, i.e. *all* known warnings flags

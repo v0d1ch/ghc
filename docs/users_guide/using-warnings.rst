@@ -1232,8 +1232,9 @@ of ``-W(no-)*``.
     <-Wsimplifiable-class-constraints>`.
 
 .. ghc-flag:: -Wspace-after-bang
-     :shortdesc: warn about spacing with strictness annotation when
-       :ghc-flag:`-XBangPatterns` are not enabled
+     :shortdesc: warn for missing space before the second argument
+        of an infix definition of ``(!)`` when
+        :ghc-flag:`-XBangPatterns` are not enabled
      :type: dynamic
      :reverse: -Wno-missing-space-after-bang
 .. ghc-flag:: -Wtabs
