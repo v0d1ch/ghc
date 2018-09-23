@@ -1,16 +1,16 @@
 
- T13600b.hs:3:3: warning: [-Wmissing-space-after-bang (in -Wextra)]
-     Did you forget to enable BangPatterns?
-     If not, try adding a space before the bang
+T13600b.hs:3:3: warning: [-Wmissing-space-after-bang (in -Wdefault)]
+      Did you forget to enable BangPatterns?
+      If not, try adding a space before the bang
 
- T13600b.hs:4:3: warning: [-Wmissing-space-after-bang (in -Wextra)]
-     Did you forget to enable BangPatterns?
-     If not, try adding a space before the bang
+T13600b.hs:4:3: warning: [-Wmissing-space-after-bang (in -Wdefault)]
+      Did you forget to enable BangPatterns?
+      If not, try adding a space before the bang
 
- T13600b.hs:8:7: warning: [-Wmissing-space-after-bang (in -Wextra)]
-     Did you forget to enable BangPatterns?
-     If not, try adding a space before the bang
+T13600b.hs:8:7: warning: [-Wmissing-space-after-bang (in -Wdefault)]
+      Did you forget to enable BangPatterns?
+      If not, try adding a space before the bang
 
- T13600b.hs:9:7: warning: [-Wmissing-space-after-bang (in -Wextra)]
-     Did you forget to enable BangPatterns?
-     If not, try adding a space before the bang
+T13600b.hs:9:7: warning: [-Wmissing-space-after-bang (in -Wdefault)]
+      Did you forget to enable BangPatterns?
+      If not, try adding a space before the bang

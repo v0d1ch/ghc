@@ -4568,7 +4568,8 @@ standardWarnings -- see Note [Documenting warning flags]
         Opt_WarnUnrecognisedWarningFlags,
         Opt_WarnSimplifiableClassConstraints,
         Opt_WarnStarBinder,
-        Opt_WarnInaccessibleCode
+        Opt_WarnInaccessibleCode,
+        Opt_WarnSpaceAfterBang
       ]
 
 -- | Things you get with -W
@@ -4584,8 +4585,7 @@ minusWOpts
         Opt_WarnIncompletePatterns,
         Opt_WarnDodgyExports,
         Opt_WarnDodgyImports,
-        Opt_WarnUnbangedStrictPatterns,
-        Opt_WarnSpaceAfterBang
+        Opt_WarnUnbangedStrictPatterns
       ]
 
 -- | Things you get with -Wall
