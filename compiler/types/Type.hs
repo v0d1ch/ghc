@@ -1592,6 +1592,7 @@ partitionInvisibleTypes :: TyCon -> [Type] -> ([Type], [Type])
 partitionInvisibleTypes tc tys =
   partitionByList (map isInvisibleArgFlag $ tyConArgFlags tc tys) tys
 
+<<<<<<< HEAD
 -- | Given a tycon and its arguments return invisible arguments
 getInvisibleArgs :: TyCon -> [Type] -> [Type]
 getInvisibleArgs tc tys = fst $ partitionInvisibles tc id tys
@@ -1601,6 +1602,13 @@ getInvisibleArgs tc tys = fst $ partitionInvisibles tc id tys
 -- ('Inferred', 'Specified', or 'Required').
 --
 -- Wrinkle: consider the following scenario:
+=======
+-- | Given a tycon and a list of things (which correspond to arguments),
+-- partitions the things into
+--      Inferred or Specified ones and
+--      Required ones
+-- The callback function is necessary for this scenario:
+>>>>>>> -
 --
 -- > T :: forall k. k -> k
 -- > tyConArgFlags T [forall m. m -> m -> m, S, R, Q]
