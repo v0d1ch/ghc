@@ -3700,7 +3700,7 @@ checkIfBang :: LHsExpr GhcPs -> Bool
 checkIfBang (L _ (HsVar _ (L _ op))) = op == bang_RDR
 checkIfBang _ = False
 
--- | Warn about missing space behind !
+-- | Warn about missing space after bang
 warnSpaceAfterBang :: SrcSpan -> P ()
 warnSpaceAfterBang span = do
     bang_on <- extension bangPatEnabled
@@ -3708,7 +3708,8 @@ warnSpaceAfterBang span = do
       addWarning Opt_WarnSpaceAfterBang span msg
     where
       msg = text "Did you forget to enable BangPatterns?" $$
-            text "If not, try adding a space before the bang"
+            text "If you mean to bind (!) then perhaps you want" $$
+            text "to add a space after the bang for clarity."
 
 -- When two single quotes don't followed by tyvar or gtycon, we report the
 -- error as empty character literal, or TH quote that missing proper type
