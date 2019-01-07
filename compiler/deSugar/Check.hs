@@ -545,7 +545,7 @@ pmTopNormaliseType_maybe env ty_cs typ
 
         case reduceTyFamApp env Representational tc ntys of
           TyFamAppOk (_co, rhs) -> NS_Step rec_nts rhs ((rhs:), id)
-          _                -> NS_Done
+          _               -> NS_Done
 
 -- | Determine suitable constraints to use at the beginning of pattern-match
 -- coverage checking by consulting the sets of term and type constraints
